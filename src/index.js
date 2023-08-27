@@ -1,7 +1,7 @@
 import app from './api';
 import database from "./db";
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3001;
 
 database.sync().then(() => {
   app.listen(port, () => {
