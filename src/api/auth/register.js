@@ -3,7 +3,10 @@ import User from "../../db/model/user";
 const register = async (req, res) => {
   try {
     const userExists = await User.findOne({ where: { email: req.body.email } });
-    if (userExists) return res.status(400).send("Email already exists");
+    if (userExists)
+      return res
+        .status(400)
+        .send(JSON.stringify({ success: false, message: "Email already exists" }));
 
     const user = await User.create({
       name: req.body.name,
@@ -12,9 +15,9 @@ const register = async (req, res) => {
       password: req.body.password,
     });
 
-    res.send({ user: user.id });
+    res.send({ success: true, user: user.id });
   } catch (err) {
-    console.log(err)
+    console.log(err);
     res.status(400).send(err);
   }
 };

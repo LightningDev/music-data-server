@@ -1,5 +1,6 @@
-import app from './api';
+import app from "./api";
 import database from "./db";
+require("dotenv").config();
 
 const port = process.env.PORT || 3001;
 

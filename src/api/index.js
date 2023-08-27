@@ -1,6 +1,7 @@
-import express from 'express';
-const cors = require('cors');
+import express from "express";
+require("dotenv").config();
 
+const cors = require("cors");
 const app = express();
 
 // Middleware
@@ -9,8 +10,8 @@ app.use(cors());
 
 // Routes
 const routes = express.Router();
-require('./auth').default(routes);
+require("./auth").default(routes);
 
-app.use('/api', routes);
+app.use("/api", routes);
 
 export default app;
