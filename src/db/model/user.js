@@ -1,5 +1,6 @@
 import Sequelize from 'sequelize';
 import database from '../index';
+const bcrypt = require('bcryptjs');
 
 const User = database.define('user', {
   id: {
@@ -16,6 +17,10 @@ const User = database.define('user', {
     type: Sequelize.TEXT,
     allowNull: false,
     unique: true
+  },
+  country: {
+    type: Sequelize.STRING(3),
+    allowNull: false
   },
   password: {
     type: Sequelize.TEXT,

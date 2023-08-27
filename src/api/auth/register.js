@@ -6,12 +6,15 @@ const register = async (req, res) => {
     if (userExists) return res.status(400).send("Email already exists");
 
     const user = await User.create({
+      name: req.body.name,
       email: req.body.email,
+      country: req.body.country,
       password: req.body.password,
     });
 
     res.send({ user: user.id });
   } catch (err) {
+    console.log(err)
     res.status(400).send(err);
   }
 };
