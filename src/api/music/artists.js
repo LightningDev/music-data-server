@@ -1,10 +1,9 @@
 import User from "../../db/model/user";
 
 const artists = async (req, res) => {
-  console.log("test");
   try {
-    const { top, user_id } = req.query;
-    const user = await User.findByPk(user_id);
+    const { top } = req.query;
+    const user = await User.findByPk(req.user.id);
     if (!user) return res.send({ artists: [] });
 
     const params = `?page=1&page_size=${top}&country=${user.country}&apikey=${process.env.MUSIX_MATCH_API_KEY}`;
