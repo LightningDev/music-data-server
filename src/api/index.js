@@ -11,6 +11,7 @@ app.use(cors());
 // Routes
 const routes = express.Router();
 require("./auth").default(routes);
+require("./music").default(routes);
 
 app.use("/api", routes);
 
