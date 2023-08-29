@@ -6,7 +6,9 @@
     "test": "jest -i --forceExit ",
     "single-test": "./node_modules/.bin/jest --runTestsByPath -i --forceExit  __tests__/createPlayer.test.js",
     "start": "babel-node ./src/index.js",
-    "dev": "nodemon --exec npm start"
+    "dev": "nodemon --exec npm start",
+    "migrate:up": "npx sequelize-cli db:migrate",
+    "migrate:undo": "npx sequelize-cli db:migrate:undo"
   },
   "author": "",
   "license": "ISC",
