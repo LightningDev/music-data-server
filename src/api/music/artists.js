@@ -1,6 +1,6 @@
 import User from "../../db/model/user";
 
-function order(a, b) {
+export function order(a, b) {
   return a.rating < b.rating ? 1 : (a.rating > b.rating ? -1 : 0);
 }
 

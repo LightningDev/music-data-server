@@ -18,7 +18,6 @@ const lyrics = async (req, res) => {
       },
     });
   } catch (err) {
-    console.log(err)
     res.status(400).send({
       message: "Error while retrieving lyrics, please try again later!",
     });

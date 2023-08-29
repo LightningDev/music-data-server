@@ -22,7 +22,6 @@ const signIn = async (req, res) => {
 
     res.send({ success: true, id: user.id });
   } catch (err) {
-    console.log(err)
     res.status(400).send(err);
   }
 };

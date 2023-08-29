@@ -1,4 +1,4 @@
-function order(a, b) {
+export function order(a, b) {
   return a.releaseDate < b.releaseDate
     ? -1
     : a.releaseDate > b.releaseDate
