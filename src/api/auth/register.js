@@ -17,7 +17,6 @@ const register = async (req, res) => {
 
     res.send({ success: true, user: user.id });
   } catch (err) {
-    console.log(err);
     res.status(400).send(err);
   }
 };

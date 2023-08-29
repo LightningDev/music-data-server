@@ -1,4 +1,4 @@
-const albumns = async (req, res) => {
+const songs = async (req, res) => {
   try {
     const { albumn } = req.query;
     const params = `?page=1&page_size=100&album_id=${albumn}&apikey=${process.env.MUSIX_MATCH_API_KEY}`;
@@ -26,4 +26,4 @@ const albumns = async (req, res) => {
   }
 };
 
-export default albumns;
+export default songs;
