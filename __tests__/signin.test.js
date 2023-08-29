@@ -38,7 +38,7 @@ describe('signIn endpoint', () => {
     await signIn(req, res);
 
     expect(res.cookie).toHaveBeenCalledWith('token', 'sampleToken', expect.any(Object));
-    expect(res.send).toHaveBeenCalledWith({ success: true, id: '1' });
+    expect(res.send).toHaveBeenCalledWith({ success: true, id: '1', token: 'sampleToken' });
   });
 
   it('should return an error for a non-existing user', async () => {

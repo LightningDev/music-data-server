@@ -20,7 +20,7 @@ const signIn = async (req, res) => {
       maxAge: 3600000
     });
 
-    res.send({ success: true, id: user.id });
+    res.send({ success: true, id: user.id, token: token });
   } catch (err) {
     res.status(400).send(err);
   }
